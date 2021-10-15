@@ -59,4 +59,18 @@ public class DbRequeteFilm {
 				System.exit(0);
 			} 
 		}
+	
+		public void nombredeFilm (){
+
+				requete = "Select count(*) from Film ";
+				try {
+					Statement stmt = conn.createStatement();
+					resultats = stmt.executeQuery(requete);
+
+				} catch (SQLException e) {
+					e.printStackTrace();
+					System.err.println(e.getClass().getName()+": "+e.getMessage());
+					System.exit(0);
+				}
+			}
 }
